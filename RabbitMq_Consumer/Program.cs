@@ -1,6 +1,7 @@
-﻿using System.Text;
+﻿// Create connection 
 using RabbitMQ.Client;
-
+using RabbitMQ.Client.Events;
+using System.Text;
 
 // Create connection 
 ConnectionFactory factory = new();
@@ -13,12 +14,14 @@ using IModel channel = connection.CreateModel();
 // Declare queue
 channel.QueueDeclare(queue: "example-queue", exclusive: false);
 
-// Send message to queue
-for (int i = 0; i < 100; i++)
+// Read message from queue
+EventingBasicConsumer consumer = new(channel);
+channel.BasicConsume(queue: "example-queue", autoAck: true, consumer: consumer);
+consumer.Received += (sender, eventArgs) =>
 {
-    Task.Delay(100).Wait();
-    byte[] message = Encoding.UTF8.GetBytes($"{i}. Hello World");
-    channel.BasicPublish(exchange: "", routingKey: "example-queue", body: message);
-}
+    byte[] body = eventArgs.Body.ToArray();
+    string message = Encoding.UTF8.GetString(body);
+    Console.WriteLine(message);
+};
 
 Console.Read();
