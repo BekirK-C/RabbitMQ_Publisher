@@ -8,11 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="RabbitMq_Direct_Exchange_Consumer\RabbitMq_Consumer.csproj" />
-    <None Include="RabbitMQ_Direct_Exchange_Publisher\RabbitMQ_Publisher.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="6.6.0" />
   </ItemGroup>
 
