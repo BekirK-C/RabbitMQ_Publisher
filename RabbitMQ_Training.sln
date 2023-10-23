@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ_Publisher", "RabbitMQ_Publisher\RabbitMQ_Publisher.csproj", "{79843993-DABC-4A29-923B-D48DD56EF952}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1. RabbitMQ_Publisher", "RabbitMQ_Publisher\1. RabbitMQ_Publisher.csproj", "{79843993-DABC-4A29-923B-D48DD56EF952}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMq_Consumer", "RabbitMq_Consumer\RabbitMq_Consumer.csproj", "{13C0D158-C571-415F-B341-96193741D890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1. RabbitMq_Consumer", "RabbitMq_Consumer\1. RabbitMq_Consumer.csproj", "{13C0D158-C571-415F-B341-96193741D890}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMq_Direct_Exchange_Consumer", "RabbitMq_Direct_Exchange_Consumer\RabbitMq_Direct_Exchange_Consumer.csproj", "{B25803C4-1F10-4771-B9E4-70E333FC7950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2. RabbitMQ_Direct_Exchange_Consumer", "RabbitMq_Direct_Exchange_Consumer\2. RabbitMQ_Direct_Exchange_Consumer.csproj", "{B25803C4-1F10-4771-B9E4-70E333FC7950}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ_Direct_Exchange_Publisher", "RabbitMQ_Direct_Exchange_Publisher\RabbitMQ_Direct_Exchange_Publisher.csproj", "{95D4825D-7460-48C1-83D5-6FA87AB0BCB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2. RabbitMQ_Direct_Exchange_Publisher", "RabbitMQ_Direct_Exchange_Publisher\2. RabbitMQ_Direct_Exchange_Publisher.csproj", "{95D4825D-7460-48C1-83D5-6FA87AB0BCB9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMq_Fanout_Exchange_Consumer", "RabbitMq_Fanout_Exchange_Consumer\RabbitMq_Fanout_Exchange_Consumer.csproj", "{972BC28B-45DB-40BD-AB8E-4D328896D3EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3. RabbitMQ_Fanout_Exchange_Consumer", "RabbitMq_Fanout_Exchange_Consumer\3. RabbitMQ_Fanout_Exchange_Consumer.csproj", "{972BC28B-45DB-40BD-AB8E-4D328896D3EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ_Fanout_Exchange_Publisher", "RabbitMQ_Fanout_Exchange_Publisher\RabbitMQ_Fanout_Exchange_Publisher.csproj", "{BE53CBED-9C3A-4985-A4B9-DF1B0B1590FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3. RabbitMQ_Fanout_Exchange_Publisher", "RabbitMQ_Fanout_Exchange_Publisher\3. RabbitMQ_Fanout_Exchange_Publisher.csproj", "{BE53CBED-9C3A-4985-A4B9-DF1B0B1590FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4. RabbitMQ_Topic_Exchange_Consumer", "RabbitMq_Topic_Exchange_Consumer\4. RabbitMQ_Topic_Exchange_Consumer.csproj", "{1E738E00-8699-4ADC-A222-8FE75152A8CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4. RabbitMQ_Topic_Exchange_Publisher", "RabbitMQ_Topic_Exchange_Publisher\4. RabbitMQ_Topic_Exchange_Publisher.csproj", "{C5A655E6-AE8E-42DA-B305-56DA62C6C047}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{BE53CBED-9C3A-4985-A4B9-DF1B0B1590FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE53CBED-9C3A-4985-A4B9-DF1B0B1590FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE53CBED-9C3A-4985-A4B9-DF1B0B1590FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E738E00-8699-4ADC-A222-8FE75152A8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E738E00-8699-4ADC-A222-8FE75152A8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E738E00-8699-4ADC-A222-8FE75152A8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E738E00-8699-4ADC-A222-8FE75152A8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A655E6-AE8E-42DA-B305-56DA62C6C047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A655E6-AE8E-42DA-B305-56DA62C6C047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A655E6-AE8E-42DA-B305-56DA62C6C047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A655E6-AE8E-42DA-B305-56DA62C6C047}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
