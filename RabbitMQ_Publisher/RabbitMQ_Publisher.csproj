@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="RabbitMq_Direct_Exchange_Consumer\RabbitMq_Consumer.csproj" />
-    <None Include="RabbitMQ_Direct_Exchange_Publisher\RabbitMQ_Publisher.csproj" />
+    <Compile Remove="RabbitMq_Direct_Exchange_Consumer\**" />
+    <Compile Remove="RabbitMQ_Direct_Exchange_Publisher\**" />
+    <EmbeddedResource Remove="RabbitMq_Direct_Exchange_Consumer\**" />
+    <EmbeddedResource Remove="RabbitMQ_Direct_Exchange_Publisher\**" />
+    <None Remove="RabbitMq_Direct_Exchange_Consumer\**" />
+    <None Remove="RabbitMQ_Direct_Exchange_Publisher\**" />
   </ItemGroup>
 
   <ItemGroup>

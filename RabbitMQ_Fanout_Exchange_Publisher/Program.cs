@@ -10,15 +10,16 @@ factory.Uri = new Uri("amqps://xgtppcak:9E7tafT5XUlGRnKeOPZTnMn1L4-OtIvE@jackal.
 using IConnection connection = factory.CreateConnection();
 using IModel channel = connection.CreateModel();
 
-// Declare queue
-channel.QueueDeclare(queue: "example-queue", exclusive: false);
+// Create Exchange
+channel.ExchangeDeclare(exchange: "fanout-exhange-example", type: ExchangeType.Fanout);
 
-// Send message to queue
+// Send message
 for (int i = 0; i < 100; i++)
 {
-    Task.Delay(100).Wait();
-    byte[] message = Encoding.UTF8.GetBytes($"{i}. Hello World");
-    channel.BasicPublish(exchange: "", routingKey: "example-queue", body: message);
+    await Task.Delay(200);
+
+    byte[] messageBody = Encoding.UTF8.GetBytes($"Message {i}");
+    channel.BasicPublish(exchange: "fanout-exhange-example", routingKey: string.Empty, body: messageBody);
 }
 
 Console.Read();

@@ -1,5 +1,5 @@
-﻿using System.Text;
-using RabbitMQ.Client;
+﻿using RabbitMQ.Client;
+using System.Text;
 
 
 // Create connection 
@@ -10,15 +10,21 @@ factory.Uri = new Uri("amqps://xgtppcak:9E7tafT5XUlGRnKeOPZTnMn1L4-OtIvE@jackal.
 using IConnection connection = factory.CreateConnection();
 using IModel channel = connection.CreateModel();
 
-// Declare queue
-channel.QueueDeclare(queue: "example-queue", exclusive: false);
+// Create exchange
+channel.ExchangeDeclare(exchange: "direct-exchange-example", type: ExchangeType.Direct);
 
-// Send message to queue
-for (int i = 0; i < 100; i++)
+// Send message
+while (true)
 {
-    Task.Delay(100).Wait();
-    byte[] message = Encoding.UTF8.GetBytes($"{i}. Hello World");
-    channel.BasicPublish(exchange: "", routingKey: "example-queue", body: message);
+    Console.WriteLine("Enter your message: ");
+
+    var message = Console.ReadLine();
+
+    var body = Encoding.UTF8.GetBytes(message!);
+
+    channel.BasicPublish(exchange: "direct-exchange-example", routingKey: "direct-queue-example", body: body);
+
+    Console.WriteLine("Message sent!");
 }
 
 Console.Read();

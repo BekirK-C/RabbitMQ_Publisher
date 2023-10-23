@@ -1,5 +1,4 @@
-﻿// Create connection 
-using RabbitMQ.Client;
+﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 
@@ -11,17 +10,24 @@ factory.Uri = new Uri("amqps://xgtppcak:9E7tafT5XUlGRnKeOPZTnMn1L4-OtIvE@jackal.
 using IConnection connection = factory.CreateConnection();
 using IModel channel = connection.CreateModel();
 
-// Declare queue
-channel.QueueDeclare(queue: "example-queue", exclusive: false);
+// Exact ExchangeDeclare from publisher
+channel.ExchangeDeclare(exchange: "direct-exchange-example", type: ExchangeType.Direct);
 
-// Read message from queue
+// Create queue
+var queueName = channel.QueueDeclare().QueueName;
+
+// Bind queue to exchange
+channel.QueueBind(queue: queueName, exchange: "direct-exchange-example", routingKey: "direct-queue-example");
+
+// Create consumer
 EventingBasicConsumer consumer = new(channel);
-channel.BasicConsume(queue: "example-queue", autoAck: true, consumer: consumer);
+channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
+
+// Handle message
 consumer.Received += (sender, eventArgs) =>
 {
-    byte[] body = eventArgs.Body.ToArray();
-    string message = Encoding.UTF8.GetString(body);
-    Console.WriteLine(message);
+    var message = Encoding.UTF8.GetString(eventArgs.Body.ToArray());
+    Console.WriteLine($"Message received: {message}");
 };
 
 Console.Read();
