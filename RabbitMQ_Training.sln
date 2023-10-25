@@ -27,6 +27,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6. RabbitMQ__Message_Templa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6. RabbitMq_Message_Templates_Consumer", "RabbitMq_Message_Templates_Consumer\6. RabbitMq_Message_Templates_Consumer.csproj", "{385267A4-6872-4692-8AD5-B4AF765C334B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ_ESB_MassTransit_Consumer", "RabbitMQ_ESB_MassTransit_Consumer\RabbitMQ_ESB_MassTransit_Consumer.csproj", "{C09D11DA-5413-41AA-90BD-08187BD4BEBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ_ESB_MassTransit_Publisher", "RabbitMQ_ESB_MassTransit_Publisher\RabbitMQ_ESB_MassTransit_Publisher.csproj", "{DDCD2230-5B1D-4797-99FB-367FF1A5A728}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ_ESB_MassTransit_Shared", "RabbitMQ_ESB_MassTransit_Shared\RabbitMQ_ESB_MassTransit_Shared.csproj", "{A9369031-3E54-420A-AB6D-F427D0B3B558}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,18 @@ Global
 		{385267A4-6872-4692-8AD5-B4AF765C334B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{385267A4-6872-4692-8AD5-B4AF765C334B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{385267A4-6872-4692-8AD5-B4AF765C334B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C09D11DA-5413-41AA-90BD-08187BD4BEBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C09D11DA-5413-41AA-90BD-08187BD4BEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C09D11DA-5413-41AA-90BD-08187BD4BEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C09D11DA-5413-41AA-90BD-08187BD4BEBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDCD2230-5B1D-4797-99FB-367FF1A5A728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCD2230-5B1D-4797-99FB-367FF1A5A728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDCD2230-5B1D-4797-99FB-367FF1A5A728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDCD2230-5B1D-4797-99FB-367FF1A5A728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9369031-3E54-420A-AB6D-F427D0B3B558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9369031-3E54-420A-AB6D-F427D0B3B558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9369031-3E54-420A-AB6D-F427D0B3B558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9369031-3E54-420A-AB6D-F427D0B3B558}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
