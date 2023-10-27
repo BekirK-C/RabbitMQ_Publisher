@@ -1,6 +1,4 @@
-﻿// Create connection 
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
+﻿using RabbitMQ.Client;
 using System.Text;
 
 // Create connection 
@@ -11,26 +9,15 @@ factory.Uri = new Uri("amqps://xgtppcak:9E7tafT5XUlGRnKeOPZTnMn1L4-OtIvE@jackal.
 using IConnection connection = factory.CreateConnection();
 using IModel channel = connection.CreateModel();
 
-// Create Exchange
-channel.ExchangeDeclare(exchange: "fanout-exhange-example", type: ExchangeType.Fanout);
-
 // Create queue
-Console.WriteLine("Queue Name Please:");
-string queueName = Console.ReadLine();
-channel.QueueDeclare(queue: queueName, exclusive: false);
+channel.QueueDeclare(queue: "example-queue");
 
-// Bind queue to exchange
-channel.QueueBind(queue: queueName, exchange: "fanout-exhange-example", routingKey: string.Empty);
-
-// Read message
-EventingBasicConsumer consumer = new(channel);
-channel.BasicConsume(consumer: consumer, queue: queueName, autoAck: true);
-
-consumer.Received += (sender, eventArgs) =>
+// Send message
+for (int i = 0; i < 100; i++)
 {
-    byte[] body = eventArgs.Body.ToArray();
-    string message = Encoding.UTF8.GetString(body);
-    Console.WriteLine(message);
-};
+    await Task.Delay(200);
+    byte[] message = Encoding.UTF8.GetBytes("Hello World: " + i);
+    channel.BasicPublish(exchange: string.Empty, routingKey: "example-queue", body: message);
+}
 
 Console.Read();

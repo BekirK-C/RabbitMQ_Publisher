@@ -12,7 +12,11 @@ using IConnection connection = factory.CreateConnection();
 using IModel channel = connection.CreateModel();
 
 // Declare queue
-channel.QueueDeclare(queue: "example-queue", exclusive: false);
+channel.QueueDeclare(queue: "example-queue", exclusive: false, durable: true, autoDelete: false);
+
+// Declare properties
+IBasicProperties properties = channel.CreateBasicProperties();
+properties.Persistent = true;
 
 // Read message from queue
 EventingBasicConsumer consumer = new(channel);
